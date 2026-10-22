@@ -112,7 +112,6 @@ section.block { padding: clamp(72px, 11vw, 150px) 0; }
 .about-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
 .about-media { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 5 / 4.4; background: #0f1319; }
 .about-media img { width: 100%; height: 100%; object-fit: cover; object-position: 55% 50%; }
-.about-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(7,9,13,.65), transparent 45%); }
 .float-card {
   position: absolute; z-index: 2; left: 18px; bottom: 18px; right: 18px;
   display: flex; gap: 10px; flex-wrap: wrap;
