@@ -57,19 +57,20 @@ p { margin: 0; }
   position: sticky; top: var(--gutter); margin: var(--gutter) var(--gutter) 0;
   z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 10px 10px 10px 22px; border-radius: 999px;
-  background: rgba(255, 255, 255, .72); border: 1px solid rgba(11,18,32,.08); box-shadow: var(--shadow);
+  padding: 8px 10px 8px 22px; border-radius: 999px;
+  background: rgba(255, 255, 255, .94); border: 1px solid rgba(11,18,32,.08); box-shadow: var(--shadow);
   backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4);
 }
 .logo { display: inline-flex; align-items: center; gap: 10px; font: 600 19px var(--font-head); letter-spacing: -.03em; }
-.logo-mark { width: 26px; height: 26px; }
+.logo-img { display: block; height: 44px; width: auto; mix-blend-mode: multiply; }
+footer .logo-img { height: 64px; }
 .nav-links { display: flex; gap: 6px; align-items: center; }
 .nav-links a:not(.btn) { padding: 10px 16px; border-radius: 999px; font-size: 15px; font-weight: 500; color: #2b3547; transition: background .2s, color .2s; }
 .nav-links a:not(.btn):hover { background: rgba(11,18,32,.06); color: #000; }
 .nav .btn { padding: 12px 22px; font-size: 15px; }
 
 /* ---------- Hero ---------- */
-.hero { padding: var(--gutter); height: calc(100svh - 76px); min-height: 560px; }
+.hero { padding: var(--gutter); height: calc(100svh - 96px); min-height: 560px; }
 .hero-card {
   position: relative; height: 100%; border-radius: var(--radius); overflow: hidden;
   background: #000; color: #fff; isolation: isolate; clip-path: inset(0 round var(--radius)); -webkit-clip-path: inset(0 round var(--radius)); transform: translateZ(0); display: flex; align-items: flex-end;
