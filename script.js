@@ -20,7 +20,7 @@ if (form) {
     const d = new FormData(form);
     const subject = encodeURIComponent(`Modelflow enquiry from ${d.get('name')}`);
     const body = encodeURIComponent(`${d.get('query')}\n\n— ${d.get('name')} (${d.get('email')})`);
-    window.location.href = `mailto:hello@modelflow.ae?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@modelflow.ae?subject=${subject}&body=${body}`;
     form.classList.add('sent');
     form.reset();
   });
