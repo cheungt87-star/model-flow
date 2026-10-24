@@ -4,11 +4,29 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-// Respect reduced motion for the hero video
+// Hero video: force muted inline autoplay (required by iOS/Android), retry if the browser blocks it
 const video = document.querySelector('.hero-card video');
-if (video && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  video.removeAttribute('autoplay');
-  video.pause();
+if (video) {
+  video.muted = true;
+  video.defaultMuted = true;
+  video.setAttribute('muted', '');
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    video.removeAttribute('autoplay');
+    video.pause();
+  } else {
+    const tryPlay = () => { const p = video.play(); if (p && p.catch) p.catch(() => {}); };
+    tryPlay();
+    video.addEventListener('loadeddata', tryPlay);
+    video.addEventListener('canplay', tryPlay);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+    // Low Power Mode and some in-app browsers block autoplay until the first touch
+    ['touchstart', 'pointerdown', 'scroll', 'click'].forEach((ev) =>
+      window.addEventListener(ev, () => { if (video.paused) tryPlay(); }, { once: true, passive: true })
+    );
+  }
 }
 
 // Contact form: opens the visitor's email client addressed to the team.
