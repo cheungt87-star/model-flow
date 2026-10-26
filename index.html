@@ -78,6 +78,22 @@
 
   <!-- Projects -->
   <section class="block projects" id="projects">
+    <svg class="loop" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="loopGrad" gradientUnits="userSpaceOnUse" x1="140" y1="0" x2="1060" y2="0">
+          <stop offset="0" stop-color="#1a4c8f"/>
+          <stop offset=".3" stop-color="#4a71b0"/>
+          <stop offset=".5" stop-color="#c7cfd9"/>
+          <stop offset=".7" stop-color="#4a71b0"/>
+          <stop offset="1" stop-color="#1a4c8f"/>
+        </linearGradient>
+        <filter id="loopGlow" x="-10%" y="-20%" width="120%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+      </defs>
+      <path class="loop-ribbon" d="M600 250 C680 120 860 80 960 150 C1060 220 1040 330 940 360 C840 390 680 340 600 250 C520 160 360 110 260 140 C160 170 140 280 240 350 C340 410 520 380 600 250 Z" pathLength="1000" stroke="url(#loopGrad)"/>
+      <path class="loop-ribbon thin" d="M600 250 C680 120 860 80 960 150 C1060 220 1040 330 940 360 C840 390 680 340 600 250 C520 160 360 110 260 140 C160 170 140 280 240 350 C340 410 520 380 600 250 Z" pathLength="1000" stroke="url(#loopGrad)" transform="translate(0 -14)"/>
+      <path class="loop-glow" d="M600 250 C680 120 860 80 960 150 C1060 220 1040 330 940 360 C840 390 680 340 600 250 C520 160 360 110 260 140 C160 170 140 280 240 350 C340 410 520 380 600 250 Z" pathLength="1000" stroke="url(#loopGrad)" filter="url(#loopGlow)"/>
+      <path class="loop-flow" d="M600 250 C680 120 860 80 960 150 C1060 220 1040 330 940 360 C840 390 680 340 600 250 C520 160 360 110 260 140 C160 170 140 280 240 350 C340 410 520 380 600 250 Z" pathLength="1000" stroke="url(#loopGrad)"/>
+    </svg>
     <div class="wrap">
       <div class="projects-head">
         <div>
