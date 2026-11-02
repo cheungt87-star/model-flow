@@ -265,3 +265,6 @@ footer { margin: 0 var(--gutter) var(--gutter); border-radius: var(--radius); ba
 @media (prefers-reduced-motion: reduce) {
   .js .step, .step.lit .ico *, .card::after, .card::before { transition: none; }
 }
+
+.story { display: grid; gap: 20px; margin-top: 28px; max-width: 560px; color: var(--muted); font-size: clamp(16px, 1.4vw, 18px); }
+.story p { color: var(--muted); }
