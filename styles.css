@@ -52,9 +52,9 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-0.025em;text-wrap:balance}
 
 /* sections */
 section{padding-top:clamp(64px,9vw,112px)}
-.head{display:grid;grid-template-columns:1.1fr .9fr;gap:24px 64px;align-items:end;margin-bottom:36px}
+.head{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:36px}
 .head h2{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.04;font-weight:800}
-.head p{color:var(--muted);max-width:44ch;justify-self:end}
+.head p{color:var(--muted);max-width:52ch}
 
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .card{background:var(--card);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s;box-shadow:0 1px 0 var(--line)}
@@ -159,8 +159,6 @@ footer{padding:clamp(48px,7vw,88px) 0 32px}
   .mobile-menu a:not(.btn){display:block;padding:16px 18px;border-radius:var(--r-md);text-decoration:none;font:600 1.1rem/1 var(--display)}
   .mobile-menu a:not(.btn):hover{background:var(--mist)}
   .mobile-menu .btn{margin-top:6px;background:var(--ink);color:#fff}
-  .head{grid-template-columns:1fr}
-  .head p{justify-self:start}
   .grid3,.values{grid-template-columns:1fr}
   .about{grid-template-columns:1fr}
   .how{grid-template-columns:1fr;gap:24px}
