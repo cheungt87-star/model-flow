@@ -27,7 +27,7 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-0.025em;text-wrap:balance}
 
 /* nav */
 .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
-.nav img{height:46px;width:auto}
+.nav img{height:34px;width:auto}
 .nav ul{display:flex;gap:6px;list-style:none;padding:0}
 .nav ul a{display:block;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:500;color:var(--muted);transition:background .2s,color .2s}
 .nav ul a:hover{background:var(--mist);color:var(--ink)}
