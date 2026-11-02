@@ -104,7 +104,7 @@ footer .logo-img { height: 64px; }
 .hero h1 em { font-style: normal; color: #a9c8fa; text-shadow: 0 2px 24px rgba(8,24,56,.6); }
 .hero .btn-primary { background: #fff; color: #12356b; }
 .hero .btn-primary:hover { box-shadow: 0 10px 34px -8px rgba(255,255,255,.45); }
-.hero-sub { margin-top: 24px; max-width: 520px; color: #cfd6df; font-size: clamp(17px, 1.6vw, 20px); }
+.hero-sub { margin-top: 22px; max-width: 440px; color: #cfd6df; font-size: clamp(17px, 1.6vw, 20px); }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-copy { max-width: 760px; }
 .scroll-hint { position: absolute; top: 50%; right: 28px; writing-mode: vertical-rl; font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.55); display: none; }
