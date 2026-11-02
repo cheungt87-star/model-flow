@@ -26,7 +26,16 @@ s.textContent="Your email app should open with your message ready. If it does no
 window.location.href="mailto:info@modelflow.ae?subject="+encodeURIComponent("Website enquiry from "+n)+"&body="+encodeURIComponent(body)});
 })();
 
-(function(){var v=document.getElementById("heroVideo");if(!v)return;if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause();return}var p=v.play();if(p&&p.catch)p.catch(function(){})})();
+(function(){var v=document.getElementById("heroVideo");if(!v)return;
+// iOS and Android only autoplay inline, muted video: force those flags, then retry if the browser still blocks it
+v.muted=true;v.defaultMuted=true;v.setAttribute("muted","");v.setAttribute("playsinline","");v.setAttribute("webkit-playsinline","");
+if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause();return}
+function go(){var p=v.play();if(p&&p.catch)p.catch(function(){})}
+go();v.addEventListener("loadeddata",go);v.addEventListener("canplay",go);
+document.addEventListener("visibilitychange",function(){if(!document.hidden)go()});
+// Low Power Mode and some in-app browsers hold autoplay until the first touch
+["touchstart","pointerdown","scroll","click"].forEach(function(ev){window.addEventListener(ev,function(){if(v.paused)go()},{once:true,passive:true})});
+})();
 (function(){var b=document.getElementById("footMenuBtn"),f=document.getElementById("foot");if(!b||!f)return;
 function set(o){f.classList.toggle("open",o);b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"Close footer menu":"Open footer menu")}
 b.addEventListener("click",function(){set(!f.classList.contains("open"))});
