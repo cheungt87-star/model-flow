@@ -154,7 +154,7 @@ section.block { padding: clamp(72px, 11vw, 150px) 0; }
 .projects-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 52px; position: relative; }
 .badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(155,188,240,.12); color: var(--accent-text); font-weight: 600; font-size: 14px; border: 1px solid rgba(155,188,240,.3); }
 .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; position: relative; }
-.card { position: relative; min-height: 240px; padding: 28px; border-radius: 26px; background: var(--surface-2); border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: flex-start; overflow: hidden; transition: transform .3s ease, border-color .3s ease; }
+.card { position: relative; min-height: 240px; padding: 28px; border-radius: 26px; background: var(--surface-2); border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: flex-start; transition: transform .3s ease, border-color .3s ease; }
 .card .bars { margin-bottom: 44px; }
 .card:hover { transform: translateY(-6px); border-color: rgba(155,188,240,.45); }
 .card .num { font: 600 14px var(--font-head); color: var(--muted); letter-spacing: .08em; }
@@ -234,6 +234,34 @@ footer { margin: 0 var(--gutter) var(--gutter); border-radius: var(--radius); ba
 .foot-addr a { color: var(--accent-text); }
 .foot-addr a:hover { text-decoration: underline; }
 
-.card h3 { margin-top: 56px; }
-@media (max-width: 1100px) and (min-width: 901px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+.card h3 { margin-top: 44px; }
 @media (max-width: 900px) { .card h3 { margin-top: 36px; } }
+
+/* How we work: journey line + staged reveal */
+.cards { padding-top: 44px; }
+.card-top { display: flex; justify-content: space-between; align-items: center; }
+.card .ico { width: 30px; height: 30px; color: var(--accent-text); }
+.ico * { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.card::before { content: ""; position: absolute; z-index: 2; left: 28px; top: -37px; width: 14px; height: 14px; border-radius: 50%; background: #0a1a38; border: 2px solid rgba(155,188,240,.45); transition: background .5s, border-color .5s, box-shadow .5s; }
+.card:not(:last-child)::after { content: ""; position: absolute; z-index: 1; left: 42px; top: -31px; height: 2px; width: calc(100% + 4px); background: linear-gradient(90deg, #9bbcf0, #c7cfd9); transform: scaleX(0); transform-origin: left; transition: transform .9s cubic-bezier(.4,0,.2,1) .35s; box-shadow: 0 0 14px rgba(155,188,240,.7); }
+.cards::before { content: ""; position: absolute; z-index: 0; left: 35px; top: 13px; right: calc(25% - 48px); height: 2px; background: rgba(255,255,255,.14); }
+.js .step { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1), border-color .6s, box-shadow .6s; }
+.js .step.lit { opacity: 1; transform: none; }
+.step.lit { border-color: rgba(155,188,240,.4); box-shadow: 0 0 0 1px rgba(155,188,240,.08), 0 24px 50px -28px rgba(74,113,176,.9); }
+.step.lit::before { background: #9bbcf0; border-color: #dbe7fb; box-shadow: 0 0 0 5px rgba(155,188,240,.22), 0 0 18px rgba(155,188,240,.9); }
+.step.lit::after { transform: scaleX(1); }
+.js .step .ico * { stroke-dashoffset: 1; }
+.step.lit .ico * { stroke-dashoffset: 0; transition: stroke-dashoffset 1.3s ease .25s; }
+.step.lit .num { color: var(--accent-text); }
+.card:hover { transform: translateY(-6px); }
+.js .step.lit:hover { transform: translateY(-6px); }
+@media (max-width: 900px) {
+  .cards { padding-top: 0; padding-left: 30px; }
+  .cards::before { left: 11px; top: 38px; bottom: 60px; right: auto; width: 2px; height: auto; }
+  .card::before { left: -26px; top: 30px; }
+  .card:not(:last-child)::after { left: -19px; top: 44px; width: 2px; height: calc(100% + 4px); transform: scaleY(0); transform-origin: top; background: linear-gradient(180deg, #9bbcf0, #c7cfd9); }
+  .step.lit::after { transform: scaleY(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .step, .step.lit .ico *, .card::after, .card::before { transition: none; }
+}

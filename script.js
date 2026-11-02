@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js');
+
 // Scroll reveal
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -46,3 +48,25 @@ if (form) {
 
 const yr = document.getElementById('year');
 if (yr) yr.textContent = new Date().getFullYear();
+
+// How we work: light the steps up one after another, draw the journey line, count the numbers
+const cards = document.querySelector('#approach .cards');
+if (cards) {
+  const steps = [...cards.querySelectorAll('.step')];
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const count = (el) => {
+    const to = +el.dataset.n; const t0 = performance.now();
+    const tick = (t) => { const p = Math.min(1, (t - t0) / 700); el.textContent = String(Math.round(to * p)).padStart(2, '0'); if (p < 1) requestAnimationFrame(tick); };
+    el.textContent = '00'; requestAnimationFrame(tick);
+  };
+  const light = (s) => { if (s.classList.contains('lit')) return; s.classList.add('lit'); if (!reduce) count(s.querySelector('.num')); };
+  if (window.matchMedia('(max-width: 900px)').matches) {
+    // Stacked layout: light each step as it scrolls into view
+    const po = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { light(e.target); po.unobserve(e.target); } }), { threshold: 0.45 });
+    steps.forEach((s) => po.observe(s));
+  } else {
+    const run = () => steps.forEach((s, i) => setTimeout(() => light(s), reduce ? 0 : i * 650));
+    const so = new IntersectionObserver((es) => { if (es[0].isIntersecting) { so.disconnect(); run(); } }, { threshold: 0.2 });
+    so.observe(cards);
+  }
+}
