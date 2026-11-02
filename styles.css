@@ -142,19 +142,15 @@ section{padding-top:clamp(64px,9vw,112px)}
 .doc a{color:var(--blue-deep)}
 
 /* footer */
-footer{padding:56px 0 40px}
-.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.3fr;gap:32px;border-top:1px solid var(--line);padding-top:36px}
-.foot img{height:42px;width:auto;margin-bottom:14px}
-.foot .tag{color:var(--muted);max-width:26ch}
-.foot h4{font:600 .8rem/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-.foot ul{list-style:none;padding:0;display:grid;gap:6px;font-size:.95rem}
-.foot a{text-decoration:none}
-.foot a:hover{text-decoration:underline}
-.legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;display:grid;gap:6px}
-.legal p{max-width:90ch}
-.legal-links{display:flex;flex-wrap:wrap;gap:6px 24px}
-.legal-links a{color:var(--ink);font-weight:500;text-decoration:none}
-.legal-links a:hover{text-decoration:underline}
+footer{padding:clamp(48px,7vw,88px) 0 32px}
+.foot{border-top:1px solid var(--line);padding-top:32px;display:grid;gap:24px}
+.foot-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px}
+.foot-top img{height:40px;width:auto}
+.foot-links{display:flex;gap:32px;list-style:none;padding:0}
+.foot-links a{text-decoration:none;font-weight:500;color:var(--muted);transition:color .2s}
+.foot-links a:hover{color:var(--ink)}
+.foot-bottom{color:var(--muted);font-size:.85rem;display:grid;gap:4px}
+.foot-bottom p{max-width:90ch}
 
 @media (max-width:900px){
   .nav ul,.nav .nav-cta{display:none}
@@ -174,14 +170,12 @@ footer{padding:56px 0 40px}
   .how .item p{flex-basis:100%}
   .who img{margin-bottom:0}
   .contact{grid-template-columns:1fr}
+  .foot-links{display:none;width:100%;flex-direction:column;gap:0}
+  .foot.open .foot-links{display:flex}
+  .foot-links a{display:block;padding:16px 0;border-top:1px solid var(--line);font:600 1.05rem/1 var(--display);color:var(--ink)}
   .card .ph{aspect-ratio:16/10}
-  .foot{grid-template-columns:1fr 1fr}
-  .foot>div:first-child,.foot>div:last-child{grid-column:1/-1}
-  .foot img{height:38px}
 }
 @media (max-width:560px){
-  footer{padding-top:40px}
-  .legal-links{gap:8px 20px}
 }
 @media (max-width:480px){
   .facts .row{grid-template-columns:1fr;gap:4px}

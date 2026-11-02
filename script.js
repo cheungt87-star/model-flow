@@ -27,3 +27,8 @@ window.location.href="mailto:info@modelflow.ae?subject="+encodeURIComponent("Web
 })();
 
 (function(){var v=document.getElementById("heroVideo");if(!v)return;if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause();return}var p=v.play();if(p&&p.catch)p.catch(function(){})})();
+(function(){var b=document.getElementById("footMenuBtn"),f=document.getElementById("foot");if(!b||!f)return;
+function set(o){f.classList.toggle("open",o);b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"Close footer menu":"Open footer menu")}
+b.addEventListener("click",function(){set(!f.classList.contains("open"))});
+document.getElementById("footLinks").addEventListener("click",function(e){if(e.target.closest("a"))set(false)});
+})();
