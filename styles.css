@@ -24,7 +24,7 @@ body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:
 img,svg{display:block;max-width:100%}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:12px}
-.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gutter)}
+.wrap{max-width:1480px;margin:0 auto;padding:0 var(--gutter)}
 h1,h2,h3{font-family:var(--display);letter-spacing:-0.022em;text-wrap:balance}
 
 /* nav */
@@ -54,10 +54,11 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-0.022em;text-wrap:balance}
 /* hero */
 .hero{background:#08142E;position:relative;border-radius:var(--r-xl);min-height:clamp(560px,72vh,700px);display:flex;align-items:flex-end;color:#fff}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,20,46,.82) 0%,rgba(8,20,46,.45) 38%,rgba(8,20,46,0) 68%),linear-gradient(to right,rgba(8,20,46,.45),rgba(8,20,46,0) 60%)}
-.hero-copy{position:relative;z-index:2;padding:clamp(24px,5vw,64px);max-width:820px}
+.hero-copy{position:relative;z-index:2;padding:clamp(24px,5vw,64px);max-width:1000px}
 .hero h1{font-size:clamp(2.5rem,6.2vw,5rem);line-height:1;font-weight:700;margin-bottom:22px}
 .hero p{font-size:clamp(1.05rem,1.6vw,1.25rem);max-width:46ch;color:rgba(255,255,255,.9);margin-bottom:32px}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px}
+@media (min-width:901px){.hero{min-height:max(560px,calc(100svh - 100px))}}
 
 /* sections */
 section{padding-top:clamp(44px,6vw,72px)}
