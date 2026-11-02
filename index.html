@@ -1,191 +1,248 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Modelflow — Smarter operations for global business</title>
-<meta name="description" content="Modelflow is a Dubai-based company providing B2B operational advisory services and general trading, licensed by Meydan.">
-<meta name="theme-color" content="#f4f6fa">
-<meta property="og:title" content="Modelflow — Smarter operations for global business">
-<meta property="og:description" content="Dubai-based B2B operational advisory and general trading, licensed by Meydan.">
+<title>ModelFlow</title>
+<meta name="theme-color" content="#F4F6FA">
+<meta property="og:title" content="ModelFlow">
+<meta property="og:description" content="Dubai-based B2B advisory and general trading, registered in the Meydan Free Zone.">
 <meta property="og:image" content="assets/hero-poster.jpg">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="description" content="ModelFlow is a Dubai-based B2B firm offering operational advisory and general trading to businesses worldwide.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<header class="nav">
-  <a href="#top" class="logo" aria-label="ModelFlow home">
-    <img class="logo-img" src="assets/logo.png" alt="ModelFlow" width="88" height="44">
-  </a>
-  <nav class="nav-links" aria-label="Primary">
-    <a href="#about">About</a>
-    <a href="#approach">How we work</a>
-    <a href="#contact" class="btn btn-primary">Contact us</a>
-  </nav>
-</header>
-
-<main id="top">
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-card">
-      <video autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/hero-poster.jpg" aria-hidden="true">
-        <source src="assets/hero.mp4" type="video/mp4">
-      </video>
-      <div class="hero-tint"></div>
-      <div class="hero-shade"></div>
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <span class="eyebrow"><span class="dot"></span>Dubai · United Arab Emirates</span>
-          <h1>Investing in<br>the future of <em>AI</em></h1>
-          <p class="hero-sub">Backing the people and technologies building the next generation of AI.</p>
-        </div>
-        <div class="hero-actions">
-          <a href="#about" class="btn btn-primary">What we do <span class="arr">→</span></a>
-          <a href="#contact" class="btn btn-ghost">Get in touch</a>
-        </div>
-      </div>
-      <span class="scroll-hint">Scroll</span>
+<div class="wrap">
+  <header class="nav">
+    <a href="#top" aria-label="ModelFlow home"><img src="assets/logo.png" alt="ModelFlow"></a>
+    <nav aria-label="Primary"><ul>
+      <li><a href="#what">What we do</a></li>
+      <li><a href="#presence">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+    <a class="btn btn-ink nav-cta" href="#contact">Get in touch</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span class="bars"></span></button>
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <a href="#what">What we do</a>
+      <a href="#presence">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="#contact">Get in touch</a>
     </div>
-  </section>
+  </header>
 
-  <!-- About -->
-  <section class="block" id="about">
-    <div class="wrap about-grid">
-      <div class="about-media reveal">
-        <img src="assets/about.jpg" alt="A robotic hand and a human hand reaching toward each other" loading="lazy">
-      </div>
-      <div>
-        <p class="kicker reveal">About us</p>
-        <h2 class="h2 reveal d1">Advisory and trade, built for global business.</h2>
-        <p class="lead reveal d2">Modelflow is a Dubai-based company licensed by Meydan, built around a simple belief: businesses grow faster when their operations work well.</p>
-        <div class="story reveal d3">
-          <p>For many enterprises expanding across borders, the hard part is rarely the opportunity. It is the machinery behind it: the processes, systems, suppliers and markets that all have to work together. We advise on exactly that, partnering with our clients to simplify how they operate and to plan their next stage of growth with clarity.</p>
-          <p>Alongside our advisory work, we trade in the practical goods that modern businesses depend on, from IT equipment and office electronics to commercial software and everyday commercial goods. We deal only in non-regulated goods, and we keep our approach simple and transparent.</p>
+  <main id="top">
+    <div class="hero ph">
+      <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg" aria-hidden="true"><source src="assets/hero.mp4" type="video/mp4"></video>
+      <div class="hero-copy">
+        <h1>Advisory and trade for global business.</h1>
+        <p>ModelFlow is a Dubai-based B2B firm. We help companies run better and grow internationally.</p>
+        <div class="cta-row">
+          <a class="btn btn-white" href="#contact">Get in touch</a>
+          <a class="btn btn-ghost" href="#what">What we do</a>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- Projects -->
-  <section class="block projects" id="approach">
-    <svg class="loop" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="loopGrad" gradientUnits="userSpaceOnUse" x1="140" y1="0" x2="1060" y2="0">
-          <stop offset="0" stop-color="#1a4c8f"/>
-          <stop offset=".3" stop-color="#4a71b0"/>
-          <stop offset=".5" stop-color="#c7cfd9"/>
-          <stop offset=".7" stop-color="#4a71b0"/>
-          <stop offset="1" stop-color="#1a4c8f"/>
-        </linearGradient>
-        <filter id="loopGlow" x="-10%" y="-20%" width="120%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
-      </defs>
-      <path class="loop-ribbon" d="M600 250 C680 120 860 80 960 150 C1060 220 1040 330 940 360 C840 390 680 340 600 250 C520 160 360 110 260 140 C160 170 140 280 240 350 C340 410 520 380 600 250 Z" pathLength="1000" stroke="url(#loopGrad)"/>
-      <path class="loop-ribbon thin" d="M600 250 C680 120 860 80 960 150 C1060 220 1040 330 940 360 C840 390 680 340 600 250 C520 160 360 110 260 140 C160 170 140 280 240 350 C340 410 520 380 600 250 Z" pathLength="1000" stroke="url(#loopGrad)" transform="translate(0 -14)"/>
-      <path class="loop-glow" d="M600 250 C680 120 860 80 960 150 C1060 220 1040 330 940 360 C840 390 680 340 600 250 C520 160 360 110 260 140 C160 170 140 280 240 350 C340 410 520 380 600 250 Z" pathLength="1000" stroke="url(#loopGrad)" filter="url(#loopGlow)"/>
-      <path class="loop-flow" d="M600 250 C680 120 860 80 960 150 C1060 220 1040 330 940 360 C840 390 680 340 600 250 C520 160 360 110 260 140 C160 170 140 280 240 350 C340 410 520 380 600 250 Z" pathLength="1000" stroke="url(#loopGrad)"/>
-    </svg>
-    <div class="wrap">
-      <div class="projects-head">
+    <section id="what">
+      <div class="head">
+        <h2>What we do.</h2>
+        <p>Advisory and trading, built around one aim: helping businesses operate and grow across borders.</p>
+      </div>
+      <div class="grid3">
+        <article class="card">
+          <div class="ph"><img src="assets/card-operations.jpg" alt="Automated warehouse retrieval system moving storage bins" style="object-position:50% 55%"></div>
+          <div class="body">
+            <h3>Operations</h3>
+            <p>Process optimisation, efficiency and digital workflow advisory.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="ph"><img src="assets/card-strategy.jpg" alt="Rocket launching into a blue sky" style="object-position:50% 52%"></div>
+          <div class="body">
+            <h3>Strategy and expansion</h3>
+            <p>Business planning, market research and vendor strategy for international growth.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="ph"><img src="assets/card-trading.jpg" alt="Rows of server racks in a data centre aisle" style="object-position:55% 50%"></div>
+          <div class="body">
+            <h3>Trading</h3>
+            <p>IT equipment, hardware, software and commercial goods for business customers.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="presence">
+      <div class="about">
+        <div class="about-photo ph">
+          <img src="assets/about-dubai.jpg" alt="Dubai skyline and marina at night" style="object-position:55% 40%">
+          <div class="in">
+            <h2>Rooted in the UAE.</h2>
+            <p>We work with businesses that operate here, or want to.</p>
+          </div>
+        </div>
+        <div class="who">
+          <img src="assets/logo.png" alt="ModelFlow">
+          <p class="eyebrow">Who we are</p>
+          <h3>A Dubai-based B2B firm.</h3>
+          <p>We help companies run better and grow across borders, through management consultancy and trading.</p>
+        </div>
+        <div class="how">
+          <img class="how-bg" src="assets/hero-poster.jpg" alt="">
+          <div>
+            <p class="eyebrow">How we work</p>
+            <h3>Clear, direct and built to last.</h3>
+          </div>
+          <div class="items">
+            <div class="item"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18l5-6 4 3 7-9"/><path d="M15 6h5v5"/></svg></span><h4>Long-term view</h4><p>Relationships that outlast a single deal.</p></div>
+            <div class="item"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/></svg></span><h4>Direct access</h4><p>You deal with the people making decisions.</p></div>
+            <div class="item"><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3.2 3 3.2 15 0 18"/><path d="M12 3c-3.2 3-3.2 15 0 18"/></svg></span><h4>International scope</h4><p>Based in Dubai, serving clients worldwide.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
         <div>
-          <p class="kicker reveal">How we work</p>
-          <h2 class="h2 reveal d1">A simple, structured<br>approach.</h2>
+          <p class="eyebrow">Contact us</p>
+          <h2>Let's talk.</h2>
+          <p class="lead">Questions about advisory or trading? Send us a note and we will reply.</p>
+          <ul class="details">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              <span>Meydan Grandstand, 6th floor, Meydan Road,<br>Nad Al Sheba, Dubai, U.A.E.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 8 8 6 8-6"/></svg>
+              <a href="mailto:info@modelflow.ae">info@modelflow.ae</a>
+            </li>
+          </ul>
         </div>
+        <form class="form" id="contactForm" novalidate>
+          <div class="field"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" placeholder="Your full name" autocomplete="name" required></div>
+          <div class="field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required></div>
+          <div class="field"><label for="cf-query">Query</label><textarea id="cf-query" name="query" placeholder="How can we help?" required></textarea></div>
+          <button class="btn" type="submit">Send message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="status" id="cfStatus" role="status" aria-live="polite"></p>
+          <p class="note">By submitting you agree to our <a href="#privacy">Privacy Policy</a> and <a href="#terms">Terms of Use</a>.</p>
+        </form>
       </div>
-      <div class="cards">
-        <article class="card step">
-          <div class="card-top"><span class="num" data-n="1">01</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6" pathLength="1"/><path d="M15.5 15.5L20 20" pathLength="1"/></svg></div>
-          <h3>Assess</h3>
-          <p>We learn how your business operates today and where the friction sits.</p>
-        </article>
-        <article class="card step">
-          <div class="card-top"><span class="num" data-n="2">02</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18c4 0 3-6 8-6s3-6 8-6" pathLength="1"/><circle cx="4" cy="18" r="1.6" pathLength="1"/><circle cx="20" cy="6" r="1.6" pathLength="1"/></svg></div>
-          <h3>Plan</h3>
-          <p>We shape a practical roadmap across process, systems, suppliers and markets.</p>
-        </article>
-        <article class="card step">
-          <div class="card-top"><span class="num" data-n="3">03</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7l1.8 1.8L9.5 5.5" pathLength="1"/><path d="M4.5 16l1.8 1.8 3.2-3.3" pathLength="1"/><path d="M13 7.5h7" pathLength="1"/><path d="M13 16.5h7" pathLength="1"/></svg></div>
-          <h3>Implement</h3>
-          <p>We work alongside your team to put the plan into practice.</p>
-        </article>
-        <article class="card step">
-          <div class="card-top"><span class="num" data-n="4">04</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12c-2-3-3-4-5-4a4 4 0 100 8c2 0 3-1 5-4s3-4 5-4a4 4 0 110 8c-2 0-3-1-5-4" pathLength="1"/></svg></div>
-          <h3>Support</h3>
-          <p>We stay on hand to review results and refine as you grow.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Contact -->
-  <section class="block" id="contact">
-    <div class="wrap contact-grid">
+  <div id="docs" hidden>
+    <article class="doc" data-doc="privacy" hidden>
+      <a class="back" href="#top">&larr; Back to home</a>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated 2 November 2026</p>
+      <p>This policy explains how ModelFlow collects, uses and protects personal data when you use this website or contact us.</p>
+
+      <h2>Who we are</h2>
+      <p>ModelFlow is a company registered in the Meydan Free Zone, Dubai, United Arab Emirates. Our office is at Meydan Grandstand, 6th floor, Meydan Road, Nad Al Sheba, Dubai, U.A.E. You can reach us at <a href="mailto:info@modelflow.ae">info@modelflow.ae</a>.</p>
+
+      <h2>What we collect</h2>
+      <ul>
+        <li>Details you send us through the contact form or by email: your name, email address and message.</li>
+        <li>Basic technical data your browser sends when you load the site, such as IP address and browser type. Our hosting provider may log this.</li>
+      </ul>
+
+      <h2>How we use it</h2>
+      <ul>
+        <li>To reply to your enquiry and manage the business relationship that follows.</li>
+        <li>To keep the website secure and working.</li>
+        <li>To meet our legal and regulatory obligations.</li>
+      </ul>
+      <p>We process personal data with your consent, where it is needed to respond to you, or where the law requires it.</p>
+
+      <h2>Sharing</h2>
+      <p>We do not sell personal data. We share it only with service providers who help us run the website and our email, and with authorities where the law requires. Providers act on our instructions.</p>
+
+      <h2>Cookies and third parties</h2>
+      <p>We do not use advertising or analytics cookies on this site. The site loads fonts from Google Fonts, so your browser connects to Google servers when you visit.</p>
+
+      <h2>Retention</h2>
+      <p>We keep enquiry details for as long as we need them to handle your request and meet record-keeping duties. We then delete or anonymise them.</p>
+
+      <h2>International transfers</h2>
+      <p>Our providers may process data outside the UAE. Where they do, we take reasonable steps to protect it.</p>
+
+      <h2>Your rights</h2>
+      <p>Under applicable UAE data protection law, you can ask us to give you access to your data, correct it, delete it, restrict its use, or stop processing it. You can also withdraw consent at any time. Email <a href="mailto:info@modelflow.ae">info@modelflow.ae</a> to make a request.</p>
+
+      <h2>Security</h2>
+      <p>We use reasonable technical and organisational measures to protect personal data. No online service is completely secure.</p>
+
+      <h2>Changes</h2>
+      <p>We may update this policy. The date at the top shows the latest version.</p>
+    </article>
+
+    <article class="doc" data-doc="terms" hidden>
+      <a class="back" href="#top">&larr; Back to home</a>
+      <h1>Terms of Use</h1>
+      <p class="updated">Last updated 2 November 2026</p>
+      <p>These terms apply to your use of the ModelFlow website. By using the site you agree to them.</p>
+
+      <h2>About this site</h2>
+      <p>The site gives general information about ModelFlow and its services. It is not an offer, a solicitation or professional advice. Using the site or sending us an enquiry does not create a client relationship.</p>
+
+      <h2>Acceptable use</h2>
+      <p>You agree to use the site lawfully. You must not try to gain unauthorised access, disrupt the site, scrape it at scale, or use it to send harmful or misleading content.</p>
+
+      <h2>Intellectual property</h2>
+      <p>The site's content, design, logo and name belong to ModelFlow or its licensors. You may view the site and share its pages by link. You may not copy, modify or reuse its content without our written permission.</p>
+
+      <h2>Third-party links and content</h2>
+      <p>The site may link to or load content from third parties. We do not control them and are not responsible for them.</p>
+
+      <h2>Accuracy and availability</h2>
+      <p>We work to keep the information accurate, but we give no warranty that it is complete or current. We provide the site as is, and may change, suspend or remove it at any time.</p>
+
+      <h2>Limitation of liability</h2>
+      <p>To the extent the law allows, ModelFlow is not liable for any loss arising from your use of, or reliance on, the site.</p>
+
+      <h2>Governing law</h2>
+      <p>These terms are governed by the laws of the United Arab Emirates as applied in the Emirate of Dubai. The courts of Dubai have jurisdiction over any dispute.</p>
+
+      <h2>Changes</h2>
+      <p>We may update these terms. The date at the top shows the latest version. Continued use of the site means you accept the update.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about these terms: <a href="mailto:info@modelflow.ae">info@modelflow.ae</a>.</p>
+    </article>
+  </div>
+
+  <footer>
+    <div class="foot">
       <div>
-        <p class="kicker reveal">Contact us</p>
-        <h2 class="h2 reveal d1">Let's talk.</h2>
-        <p class="lead reveal d2">Founder, partner or just curious? Send us a note and the team will get back to you.</p>
-        <div class="contact-meta reveal d3">
-          <div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            <span>Meydan Grandstand, 6th floor, Meydan Road,<br>Nad Al Sheba, Dubai, U.A.E.</span>
-          </div>
-          <div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 8l9 6 9-6"/></svg>
-            <a href="mailto:info@modelflow.ae">info@modelflow.ae</a>
-          </div>
-        </div>
+        <img src="assets/logo.png" alt="ModelFlow">
+        <p class="tag">Advisory and trade for global business.</p>
       </div>
-      <form class="form reveal d1" id="contact-form">
-        <div class="field">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name" required>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
-        </div>
-        <div class="field">
-          <label for="query">Query</label>
-          <textarea id="query" name="query" placeholder="How can we help?" required></textarea>
-        </div>
-        <button class="btn btn-primary" type="submit">Send message <span class="arr">→</span></button>
-        <p class="form-success" role="status">Thanks — your email app should open with your message ready to send.</p>
-        <p class="form-note">By submitting you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
-      </form>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="foot-top">
-    <div>
-      <a href="#top" class="logo">
-        <img class="logo-img" src="assets/logo.png" alt="ModelFlow" width="120" height="60">
-      </a>
-      <p>Operational advisory and general trading.</p>
-      <address class="foot-addr">Meydan Grandstand, 6th floor, Meydan Road,<br>Nad Al Sheba, Dubai, U.A.E.<br><a href="mailto:info@modelflow.ae">info@modelflow.ae</a></address>
-    </div>
-    <div class="foot-cols">
       <div>
         <h4>Company</h4>
-        <ul><li><a href="#about">About</a></li><li><a href="#approach">How we work</a></li><li><a href="#contact">Contact</a></li></ul>
+        <ul><li>ModelFlow</li><li>Registered in the Meydan Free Zone</li><li>Dubai, United Arab Emirates</li></ul>
       </div>
       <div>
-        <h4>Legal</h4>
-        <ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li><li><a href="privacy.html#cookies">Cookies</a></li></ul>
+        <h4>Activities</h4>
+        <ul><li>Management consultancy</li><li>General trading</li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li>Meydan Grandstand, 6th floor, Meydan Road, Nad Al Sheba, Dubai, U.A.E.</li><li><a href="mailto:info@modelflow.ae">info@modelflow.ae</a></li></ul>
       </div>
     </div>
-  </div>
-  <p class="disclaimer">Information on this website is general in nature and is not professional advice or an offer to provide any product or service. Modelflow does not trade in regulated, controlled or restricted commodities.</p>
-  <div class="foot-bottom">
-    <span>© <span id="year">2026</span> Modelflow. All rights reserved.</span>
-    <span>Modelflow · Licensed by Meydan</span>
-  </div>
-</footer>
-
+    <div class="legal">
+      <p class="legal-links"><a href="#privacy">Privacy Policy</a><a href="#terms">Terms of Use</a></p>
+      <p>&copy; 2026 ModelFlow. All rights reserved.</p>
+      <p>ModelFlow provides non-regulated business advisory services and general trading. Information on this website is general in nature and is not professional advice.</p>
+    </div>
+  </footer>
+</div>
 <script src="script.js"></script>
 </body>
 </html>

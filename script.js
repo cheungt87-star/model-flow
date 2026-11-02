@@ -1,72 +1,29 @@
-document.documentElement.classList.add('js');
-
-// Scroll reveal
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-
-// Hero video: force muted inline autoplay (required by iOS/Android), retry if the browser blocks it
-const video = document.querySelector('.hero-card video');
-if (video) {
-  video.muted = true;
-  video.defaultMuted = true;
-  video.setAttribute('muted', '');
-  video.setAttribute('playsinline', '');
-  video.setAttribute('webkit-playsinline', '');
-
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    video.removeAttribute('autoplay');
-    video.pause();
-  } else {
-    const tryPlay = () => { const p = video.play(); if (p && p.catch) p.catch(() => {}); };
-    tryPlay();
-    video.addEventListener('loadeddata', tryPlay);
-    video.addEventListener('canplay', tryPlay);
-    document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
-    // Low Power Mode and some in-app browsers block autoplay until the first touch
-    ['touchstart', 'pointerdown', 'scroll', 'click'].forEach((ev) =>
-      window.addEventListener(ev, () => { if (video.paused) tryPlay(); }, { once: true, passive: true })
-    );
-  }
+(function(){
+var btn=document.getElementById("menuBtn"),menu=document.getElementById("mobileMenu");
+function setMenu(o){if(!btn||!menu)return;menu.hidden=!o;btn.setAttribute("aria-expanded",o?"true":"false");btn.setAttribute("aria-label",o?"Close menu":"Open menu")}
+if(btn){btn.addEventListener("click",function(){setMenu(menu.hidden)});
+menu.addEventListener("click",function(e){if(e.target.closest("a"))setMenu(false)});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")setMenu(false)});
+window.matchMedia("(min-width:901px)").addEventListener("change",function(){setMenu(false)})}
+var main=document.getElementById("top"),docs=document.getElementById("docs");
+function route(){
+  var h=location.hash.slice(1),isDoc=(h==="privacy"||h==="terms");
+  if(isDoc){main.hidden=true;docs.hidden=false;
+    [].forEach.call(docs.querySelectorAll(".doc"),function(a){a.hidden=a.getAttribute("data-doc")!==h});
+    document.title=(h==="privacy"?"Privacy Policy":"Terms of Use")+" | ModelFlow";window.scrollTo(0,0)}
+  else{var was=main.hidden;main.hidden=false;docs.hidden=true;document.title="ModelFlow";
+    if(was){var el=h&&document.getElementById(h);if(el)el.scrollIntoView();else window.scrollTo(0,0)}}
 }
+window.addEventListener("hashchange",route);route();
+})();
 
-// Contact form: opens the visitor's email client addressed to the team.
-// Swap this handler for a fetch() to your form backend (Formspree, Resend, etc.) when ready.
-const form = document.getElementById('contact-form');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const d = new FormData(form);
-    const subject = encodeURIComponent(`Modelflow enquiry from ${d.get('name')}`);
-    const body = encodeURIComponent(`${d.get('query')}\n\n— ${d.get('name')} (${d.get('email')})`);
-    window.location.href = `mailto:info@modelflow.ae?subject=${subject}&body=${body}`;
-    form.classList.add('sent');
-    form.reset();
-  });
-}
+(function(){var f=document.getElementById("contactForm"),s=document.getElementById("cfStatus");if(!f)return;
+f.addEventListener("submit",function(e){e.preventDefault();
+var n=f.name.value.trim(),m=f.email.value.trim(),q=f.query.value.trim();
+if(!n||!/^\S+@\S+\.\S+$/.test(m)||!q){s.textContent="Enter your name, a valid email and your query.";return}
+var body="Name: "+n+"\nEmail: "+m+"\n\n"+q;
+s.textContent="Your email app should open with your message ready. If it does not, email info@modelflow.ae.";
+window.location.href="mailto:info@modelflow.ae?subject="+encodeURIComponent("Website enquiry from "+n)+"&body="+encodeURIComponent(body)});
+})();
 
-const yr = document.getElementById('year');
-if (yr) yr.textContent = new Date().getFullYear();
-
-// How we work: light the steps up one after another, draw the journey line, count the numbers
-const cards = document.querySelector('#approach .cards');
-if (cards) {
-  const steps = [...cards.querySelectorAll('.step')];
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const count = (el) => {
-    const to = +el.dataset.n; const t0 = performance.now();
-    const tick = (t) => { const p = Math.min(1, (t - t0) / 700); el.textContent = String(Math.round(to * p)).padStart(2, '0'); if (p < 1) requestAnimationFrame(tick); };
-    el.textContent = '00'; requestAnimationFrame(tick);
-  };
-  const light = (s) => { if (s.classList.contains('lit')) return; s.classList.add('lit'); if (!reduce) count(s.querySelector('.num')); };
-  if (window.matchMedia('(max-width: 900px)').matches) {
-    // Stacked layout: light each step as it scrolls into view
-    const po = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { light(e.target); po.unobserve(e.target); } }), { threshold: 0.45 });
-    steps.forEach((s) => po.observe(s));
-  } else {
-    const run = () => steps.forEach((s, i) => setTimeout(() => light(s), reduce ? 0 : i * 650));
-    const so = new IntersectionObserver((es) => { if (es[0].isIntersecting) { so.disconnect(); run(); } }, { threshold: 0.2 });
-    so.observe(cards);
-  }
-}
+(function(){var v=document.getElementById("heroVideo");if(!v)return;if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){v.removeAttribute("autoplay");v.pause();return}var p=v.play();if(p&&p.catch)p.catch(function(){})})();
