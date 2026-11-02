@@ -60,8 +60,8 @@ h1,h2,h3{font-family:var(--display);letter-spacing:-0.022em;text-wrap:balance}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px}
 
 /* sections */
-section{padding-top:clamp(64px,9vw,112px)}
-.head{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:36px}
+section{padding-top:clamp(44px,6vw,72px)}
+.head{display:grid;grid-template-columns:1fr;gap:14px;margin-bottom:28px}
 .head h2{font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.04;font-weight:700}
 .head p{color:var(--muted);max-width:52ch}
 
@@ -159,7 +159,7 @@ section{padding-top:clamp(64px,9vw,112px)}
 .doc a{color:var(--blue-deep)}
 
 /* footer */
-footer{padding:clamp(48px,7vw,88px) 0 32px}
+footer{padding:clamp(36px,5vw,56px) 0 28px}
 .foot{border-top:1px solid var(--line);padding-top:32px;display:grid;gap:24px}
 .foot-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px}
 .foot-top img{height:40px;width:auto}
