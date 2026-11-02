@@ -229,3 +229,7 @@ footer { margin: 0 var(--gutter) var(--gutter); border-radius: var(--radius); ba
   .reveal { opacity: 1; transform: none; transition: none; }
   .dot, .card .bars i::after { animation: none; }
 }
+
+.foot-addr { font-style: normal; color: var(--muted); font-size: 15px; margin-top: 14px; line-height: 1.6; }
+.foot-addr a { color: var(--accent-text); }
+.foot-addr a:hover { text-decoration: underline; }
